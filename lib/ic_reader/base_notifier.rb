@@ -1,7 +1,7 @@
 module ICReader
   class BaseNotifier
     def self.notify message
-      p "BaseNotifier: #{message}"
+      p "#{message}"
     end
 
     def notify message
