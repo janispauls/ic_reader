@@ -1,4 +1,5 @@
 require "open-uri"
+
 module ICReader
   class TitleReader
     def initialize args
@@ -9,7 +10,8 @@ module ICReader
     def run
       loop do
         response = @uri.read
-        p response
+        title = TitleParser.new(response).parse
+        p title
         sleep @interval
       end
     end
