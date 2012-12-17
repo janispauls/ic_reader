@@ -2,7 +2,6 @@ require "spec_helper"
 
 module ICReader
   describe Watcher do
-    let(:watcher) { Watcher.new }
     let(:gn) { GrowlNotifier }
     let(:bn) { BaseNotifier.new }
 

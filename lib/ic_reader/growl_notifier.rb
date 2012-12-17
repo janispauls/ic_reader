@@ -1,5 +1,3 @@
-require "growl"
-
 module ICReader
   class GrowlNotifier
 
