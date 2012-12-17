@@ -1,10 +1,10 @@
 module ICReader
   class Watcher
 
-    def initialize reader, interval, notifier
+    def initialize reader, interval, notifiers
       @reader = reader
       @interval = interval
-      @notifier = notifier
+      @notifiers = [notifiers].flatten
       @last_data = ""
     end
 
@@ -19,7 +19,7 @@ module ICReader
     def notify data
       unless @last_data == data
         @last_data = data
-        @notifier.notify data
+        @notifiers.each { |n| n.notify data }
       end
     end
   end
