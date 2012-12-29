@@ -1,13 +1,8 @@
 module ICReader
-  class RedisPubSubNotifier
-
-    def initialize redis, channel
-      @redis = redis
-      @channel = channel
-    end
+  class RedisPubSubNotifier < RedisNotifier
 
     def notify message
-      @redis.publish @channel, message
+      @redis.publish @key, message
     end
   end
 end
